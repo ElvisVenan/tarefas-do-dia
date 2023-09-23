@@ -9,6 +9,9 @@ abstract class _TaskController with Store {
   @observable
   ObservableList<TaskModel> tasks = ObservableList<TaskModel>();
 
+  @observable
+  bool showColum = false;
+
   @action
   void addTask(TaskModel task) {
     tasks.add(task);
@@ -22,5 +25,10 @@ abstract class _TaskController with Store {
   @action
   void editTask(int index, TaskModel task) {
     tasks[index] = task;
+  }
+
+  @action
+  void showImage(){
+    showColum = !showColum;
   }
 }
