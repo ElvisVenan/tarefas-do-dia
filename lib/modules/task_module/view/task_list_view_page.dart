@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tarefas_do_dia/modules/task_module/model/task_model.dart';
 import '../controller/task_controller.dart';
 
@@ -15,7 +16,7 @@ class TaskListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TaskController taskController = TaskController();
+    final taskController = Modular.get<TaskController>();
     return Observer(
       builder: (context) {
         return Column(
