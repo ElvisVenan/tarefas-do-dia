@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'app_module.dart';
+import 'app_widget.dart';
 
-import 'modules/task_module/view/task_page.dart';
+void main() async {
 
-void main() {
-  runApp(TaskPage());
+  runApp(ModularApp(
+    module: AppModule(),
+    child: const AppWidget(),
+  ));
+  await Modular.isModuleReady<AppModule>();
 }
-
-
